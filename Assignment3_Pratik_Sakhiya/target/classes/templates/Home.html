@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeLeaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Root Page</title>
+<link rel="stylesheet" type="text/css" media="all"
+	th:href="@{/css/Style.css}">
+</head>
+<body id="HomeBody">
+	<h1>This is Root Page</h1>
+	<h2>You can View the Events and Book the tickets for that</h2>
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/login">Login</a></li>
+			<li><a href="/register">Register as a Guest</a></li>
+			<li sec:authorize="hasRole('VENDOR')"><a href="/AddTicket">Book Tickets</a></li>
+			<li sec:authorize="hasAnyRole('GUEST','VENDOR')"><a href="/ViewData">View Tickets</a></li>
+			<li sec:authorize="hasAnyRole('GUEST','VENDOR')"><a href="/logout">Logout</a></li>
+		</ul>
+	</nav>
+
+	<aside id="datesection">
+		<h3>Book Your Tickets here</h3>
+
+		<div id="content1">
+			<b>Show on Weekend</b><br>
+			<br> <img src="../images/apdilon.jpg" alt="AP Dilon Concert"
+				width="230px" height="180px;"><br>
+			<p>
+				<strong>Artist: </strong>AP Dilon
+			</p>
+			<p>
+				<strong>Location: </strong>Rogers Centre, Toronto
+			</p>
+			<label for="date1"> <strong>25 December, 2022</strong> <span
+				class="date"> <br> "Sunday"
+			</span>
+			</label>
+		</div>
+
+		<div id="content2">
+			<b>Show on Weekdays</b><br>
+			<br> <img src="../images/divine.jpg" alt="Divine Concert"
+				width="230px" height="180px;"><br>
+			<p>
+				<strong>Artist: </strong>Divine
+			</p>
+			<p>
+				<strong>Location: </strong>Budweiser Stage, Toronto
+			</p>
+			<label for="date2"> <strong>14 December, 2022</strong> <span
+				class="date"> <br> "Wednesday"
+			</span>
+			</label>
+		</div>
+	</aside>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeLeaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Page</title>
+<link rel="stylesheet" type="text/css" media="all"
+	th:href="@{/css/Style.css}">
+</head>
+<body id = "ViewBody">
+	<h2>This Page is to View your Credentials</h2>
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/AddTicket">Book Tickets</a></li>
+			<li><a href="/ViewData">View Tickets</a></li>
+			<li><a href="/logout">Logout</a></li>
+		</ul>
+	</nav>
+	<br>
+	<table align="center" border="1">
+		<tr>
+			<th>ID</th>
+			<th>Dates</th>
+			<th>UserName</th>
+			<th>Price</th>
+			<th>No. of Tickets</th>
+			<th>Email</th>
+			<th>Discount</th>
+		</tr>
+
+		<tr th:each="d : ${bkeventList}">
+			<td th:text="${d.id}"></td>
+			<td th:text="${d.dates}"></td>
+			<td th:text="${d.userName}"></td>
+			<td th:text="${d.price}"></td>
+			<td th:text="${d.numTicket}"></td>
+			<td th:text="${d.email}"></td>
+			<td th:text="${d.discount}"></td>
+			<td sec:authorize="hasRole('VENDOR')">
+				<a id="editLink" th:href="@{/edit/{id}(id=${d.id})}">Edit</a>
+			</td>
+			<td sec:authorize="hasRole('VENDOR')">
+				<a id="delLink" th:href="@{/delete/{id}(id=${d.id})}">Delete</a>
+			</td>
+		</tr>
+	</table><br><br>
+	<div id="checkTotal" sec:authorize="hasRole('GUEST')">
+		<section> Sub-Total: $<label th:text="${subTotal}"></label> </section>
+		<section> Tax:  $<label th:text="${tax}"></label> </section>
+		<hr>
+		<section> Total:  $<label th:text="${total}"></label> </section>
+	</div>
+</body>
+</html>

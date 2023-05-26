@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeLeaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Page</title>
+<link rel="stylesheet" type="text/css" media="all"
+	th:href="@{/css/Style.css}">
+</head>
+<body id="BookBody">
+	<h2>Information and Booking for Tickets</h2>
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/AddTicket">Book Tickets</a></li>
+			<li><a href="/ViewData">View Tickets</a></li>
+			<li><a href="/logout">Logout</a></li>
+		</ul>
+	</nav>
+
+	<section>
+
+		<form th:action="@{/editTicket}" method="post"
+			th:object="${bkevent}">
+			<aside id="datesection">
+				<h3>Book Your Tickets here</h3>
+
+				<div id="content1">
+					<b>Show on Weekend</b><br> <br> <img
+						src="../images/apdilon.jpg" alt="AP Dilon Concert" width="230px"
+						height="180px;"><br>
+					<p>
+						<strong>Artist: </strong>AP Dilon
+					</p>
+					<p>
+						<strong>Location: </strong>Rogers Centre, Toronto
+					</p>
+					<label for="date1"><input type="radio" id="date1"
+						th:field="*{dates}" value="2022-12-25"> <strong>25
+							December, 2022</strong> <span class="date"> <br> "Sunday"
+					</span> </label>
+				</div>
+
+				<div id="content2">
+					<b>Show on Weekdays</b><br> <br> <img
+						src="../images/divine.jpg" alt="Divine Concert" width="230px"
+						height="180px;"><br>
+					<p>
+						<strong>Artist: </strong>Divine
+					</p>
+					<p>
+						<strong>Location: </strong>Budweiser Stage, Toronto
+					</p>
+					<label for="date2"><input type="radio" id="date2"
+						th:field="*{dates}" value="2022-12-14"> <strong>14
+							December, 2022</strong> <span class="date"> <br> "Wednesday"
+					</span> </label>
+				</div>
+			</aside>
+			<aside id="ralign">
+				<div>
+					<label> Name: </label> 
+					<select id="custName" th:field="*{userName}">
+						<option th:each="user: ${usr}" th:text="${user.userName}" th:value="${user.userName}"></option>
+					</select><br>
+				</div>
+				<div>
+					<label> Price </label> <select th:field="*{price}">
+						<option th:each="p: *{prices}" th:text="${p}" th:value="${p}"></option>
+					</select><br>
+				</div>
+				<div>
+					<label> Number of Tickets</label> <input type="number" step="1"
+						min="1" th:field="*{numTicket}"> <br>
+				</div>
+
+
+				<div>
+					<label> Email:</label> <input type="text" th:field="*{email}">
+					<!--  > -->
+					<br>
+				</div>
+
+				<div>
+					<input type="checkbox" id="discount" th:field=*{discount}>
+					<label for="discount">I want Discount coupon for next
+						purchase</label><br>
+				</div>
+
+				<br>
+				<div>
+					<input type="submit" id="btn" value="Book">
+				</div>
+				<br>
+
+
+			</aside>
+		</form>
+	</section>
+
+
+</body>
+</html>

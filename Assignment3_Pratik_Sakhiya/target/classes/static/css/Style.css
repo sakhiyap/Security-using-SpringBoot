@@ -1,0 +1,167 @@
+h1{
+	color:#000040;
+	text-align:center;
+}
+h2{
+	color:#ec4d48;
+	text-align:center;
+}
+input[type='radio']{
+    width: 20px;
+    height: 20px;
+}
+#HomeBody #datesection{
+	text-align:center;
+	margin-left:450px;
+}
+#ViewBody table {
+	border-collapse: collapse
+}
+#ViewBody th,#Viewbody td{
+	font-size:20px;
+	padding:10px;
+	text-align:center;
+	
+}
+#ViewBody table{
+	color:#800000;
+	Background-color: #7C898B;
+	font-size:20px;
+}
+#btn,#ralign input,#ralign select{
+	background-color: #7C898B;
+	font-size:17px;
+}
+#btn:hover{
+	background-color: orange;
+	color:black;
+}
+#BookBody,#ViewBody,#HomeBody,#LoginBody,#RegisterBody{
+  background-color: #e0afa0;
+	background-image: url("../images/Event2.jpg");
+	background-size:100%;
+	background-repeat: no-repeat;
+}
+
+#datesection b{
+	color:#970000;
+}
+#datesection div{
+	display: inline-block;	
+	
+}
+
+#datesection h3{
+	color:#b9ffff;
+}
+#datesection{
+	float:left;
+	margin-left:150px;
+	text-align:center;
+	font-size:20px;
+	
+}
+#ralign{
+	float:right;
+	margin-right:200px;
+	margin-top:50px;
+	padding:30px;
+	font-size:20px;
+}
+#content1,#content2{
+	background-color:#7C898B;
+	padding-top:15px;
+	padding:15px;
+}
+#ralign div{
+	margin:10px;
+}
+#datesection,#ralign{
+	display: inline-block;	
+	
+}
+.formContent{
+	background-color:#7C898B;
+	padding-top:15px;
+	padding:15px;
+	width:300px;
+	align-items:center;
+	margin:auto;
+}
+.formContent input{
+	background-color: #414849;
+	color:#fe9572;
+	font-size:17px;
+}
+.formContent div{
+	margin:20px;
+}
+
+#checkTotal{
+	background-color:#7C898B;
+	padding-top:15px;
+	padding:15px;
+	width:300px;
+	
+	margin:auto;
+}
+#checkTotal section{
+	 font-weight: bold;
+	 font-size:17px;
+	 justify-content: right;
+}
+
+#delLink,#editLink{
+	Text-decoration:none;
+	padding: 7px;
+    color:#93ccff;
+    margin-right:7px;
+    font-size:17px;
+} 
+#delLink a:hover,#editLink a:hover
+{
+    box-shadow: 0px 1px 1px rgb(133, 152, 155);
+    color: rgb(255, 151, 77);
+}
+
+
+
+
+
+
+
+nav
+{
+    height: 90px;
+    margin-left: 10px;
+    text-align:center;
+}
+nav ul
+{
+    margin: 0px;
+    padding: 0px;
+    list-style-type:none;
+}
+nav li
+{
+    display: inline-block;
+}
+nav a
+{
+    padding: 15px 15px;
+    background: orange;
+    color:aliceblue;
+    display: block;
+    text-decoration: none;
+    font-size:17px;
+}
+nav a:hover
+{
+    background-color: #C6E0FF;
+    box-shadow: 0px 1px 1px rgb(133, 152, 155);
+    color: rgb(255, 151, 77);
+}
+
+
+
+
